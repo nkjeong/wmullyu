@@ -38,6 +38,7 @@
 
 .innerContent{
 	display:none;
+	flex-direction:column;
 	background-color:rgba(0,0,0,0.9);
 }
 
@@ -67,6 +68,20 @@
 	flex:1;
 	font-weight:700;
 	height:100%;
+}
+
+.innerContent > section:last-child{
+	padding:70px 0;
+	flex:1;
+}
+
+.innerContent .boardSection{
+	width:80%;
+	height:100%;
+	margin:0 auto;
+	border:1px solid #3f3f3f;
+	border-radius: 10px;
+	box-shadow: 0 0 10px 5px rgba(77, 77, 77, 0.3);
 }
 
 .innerRight:hover {

@@ -118,7 +118,9 @@
 						<article class="boardTitle">fff</article>
 						<article class="boardCO"><i class="fa-solid fa-xmark board"></i></article>
 					</section>
-					<section></section>
+					<section>
+						<section class="boardSection"></section>
+					</section>
 				</div>
 			</div>
 		<%
