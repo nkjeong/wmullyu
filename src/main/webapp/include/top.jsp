@@ -113,7 +113,13 @@
 					<%}%>
 				</div>
 				<div class="innerRight"><span><i class="fa-solid fa-chevron-left"></i></span></div>
-				<div class="innerContent"></div>
+				<div class="innerContent">
+					<section>
+						<article class="boardTitle">fff</article>
+						<article class="boardCO"><i class="fa-solid fa-xmark board"></i></article>
+					</section>
+					<section></section>
+				</div>
 			</div>
 		<%
 			}
@@ -273,7 +279,7 @@
 								<section>
 									<article></article>
 									<article>BRAND</article>
-									<article><i class="fa-solid fa-xmark"></i></article>
+									<article><i class="fa-solid fa-xmark brand"></i></article>
 								</section>
 								<section class="brand-list-wrapper">
 									<!-- brand list -->

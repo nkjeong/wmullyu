@@ -47,7 +47,7 @@ if(brandWrapper){
 
 function brand(brand) {//catagory.js 에서 호출
     const brandWrapper = document.querySelector('.brand-wrapper');
-    const faXmark = document.querySelector('i.fa-solid.fa-xmark');
+    const faXmark = document.querySelector('i.fa-solid.fa-xmark.brand');
 
     const toggleBrandWrapper = function () {
         brandWrapper.classList.toggle('show');

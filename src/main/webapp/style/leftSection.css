@@ -18,6 +18,12 @@
     height: 100%;
     background-color: #353535;
 }
+.innerLeft > section:not(:first-child) section:not(:first-child){
+	cursor:pointer;
+}
+.innerLeft > section:not(:first-child) section:hover:not(:first-child){
+	color:#dc3545;
+}
 
 .innerRight {
     display: flex;
@@ -32,7 +38,35 @@
 
 .innerContent{
 	display:none;
+	background-color:rgba(0,0,0,0.9);
+}
+
+.innerContent > section:first-child{
+	display: flex;
+	height:50px;
+	border-bottom:1px solid #3f3f3f;
+	color:#909090;
+	width:100%;
+}
+.innerContent .boardCO, .innerContent .boardTitle{
+	display: flex;
+	justify-content:center;
+	align-items:center;
+}
+.innerContent .boardCO{
+	width:50px;
+	height:100%;
+	font-size: 1.5rem;
+	cursor:pointer;
+	
+}
+.innerContent .boardCO:hover{
+	color:#dc3545;
+}
+.innerContent .boardTitle{
 	flex:1;
+	font-weight:700;
+	height:100%;
 }
 
 .innerRight:hover {
