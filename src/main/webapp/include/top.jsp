@@ -99,7 +99,7 @@
 								회원조회
 							</section>
 						</section>
-						<section class="memberSection">
+						<section class="noticeSection">
 							<section class="leftSectionTitle">
 								공지사항관리
 							</section>
@@ -119,7 +119,7 @@
 						<article class="boardCO"><i class="fa-solid fa-xmark board"></i></article>
 					</section>
 					<section>
-						<section class="boardSection"></section>
+						<section class="boardSection">ggggg</section>
 					</section>
 				</div>
 			</div>
