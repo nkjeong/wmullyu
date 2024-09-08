@@ -1,4 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
+<%
+	String root = "https://www.wmullyu.co.kr";
+%>
 	<section class="mainLogged">
 		<section class="main-layout-width">
 			<section class="wmullyu-section">
@@ -51,11 +54,11 @@
 		</section>
 		<section class="banner_03 main-layout-width">
 			<section class="representative-images">
-				<article><img src="https://www.wmullyu.co.kr/images/1000/kitaboshi_0001.jpg"></article>
-				<article><img src="https://www.wmullyu.co.kr/images/1000/maped_0004.jpg"></article>
-				<article><img src="https://www.wmullyu.co.kr/images/1000/ohto_0001.jpg"></article>
-				<article><img src="https://www.wmullyu.co.kr/images/1000/java_0012.jpg"></article>
-				<article><img src="https://www.wmullyu.co.kr/images/1000/staedtler_0016.jpg"></article>
+				<article><img src="<%=root%>/images/1000/kitaboshi_0001.jpg"></article>
+				<article><img src="<%=root%>/images/1000/maped_0004.jpg"></article>
+				<article><img src="<%=root%>/images/1000/ohto_0001.jpg"></article>
+				<article><img src="<%=root%>/images/1000/java_0012.jpg"></article>
+				<article><img src="<%=root%>/images/1000/staedtler_0016.jpg"></article>
 			</section>
 		</section>
 		<section class="banner_02 main-layout-width">
