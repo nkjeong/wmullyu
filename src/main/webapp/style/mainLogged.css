@@ -52,18 +52,21 @@ main .mainLogged .banner_03 .representative-images > article > img{
 	border-radius: 10px;
 }
 main .mainLogged .banner_01,
-main .mainLogged .banner_02{
+main .mainLogged .banner_02,
+main .mainLogged .banner_04{
 	display:flex;
 	justify-content:space-between;
 }
 
 main .mainLogged .banner_01 img,
-main .mainLogged .banner_02 img{
+main .mainLogged .banner_02 img,
+main .mainLogged .banner_04 img{
 	border-radius: 10px;
 }
 
 main .mainLogged .banner_01 > section:last-child,
-main .mainLogged .banner_02 > section:first-child {
+main .mainLogged .banner_02 > section:first-child,
+main .mainLogged .banner_04 > section:last-child {
 	display: flex;
 	flex:1;
 	flex-direction: column;
@@ -74,6 +77,10 @@ main .mainLogged .banner_02 > section:first-child {
 }
 main .mainLogged .banner_02 > section:first-child{
 	align-items: flex-start;
+}
+
+.banner_05 img{
+	border-radius: 10px;
 }
 
 .image-banner{
