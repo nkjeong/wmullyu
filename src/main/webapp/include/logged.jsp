@@ -11,12 +11,14 @@
 				</section>
 				<section class="info-box">
 					<section>
+						쇼핑몰 개발사항
 					</section>
 					<section>
 					</section>
 				</section>
 				<section class="info-box">
 					<section>
+						웹사이트 개발사항
 					</section>
 					<section>
 					</section>
@@ -49,11 +51,11 @@
 		</section>
 		<section class="banner_03 main-layout-width">
 			<section class="representative-images">
-				<article><img src="/images/1000/kitaboshi_0001.jpg"></article>
-				<article><img src="/images/1000/maped_0004.jpg"></article>
-				<article><img src="/images/1000/ohto_0001.jpg"></article>
-				<article><img src="/images/1000/java_0012.jpg"></article>
-				<article><img src="/images/1000/staedtler_0016.jpg"></article>
+				<article><img src="https://www.wmullyu.co.kr/images/1000/kitaboshi_0001.jpg"></article>
+				<article><img src="https://www.wmullyu.co.kr/images/1000/maped_0004.jpg"></article>
+				<article><img src="https://www.wmullyu.co.kr/images/1000/ohto_0001.jpg"></article>
+				<article><img src="https://www.wmullyu.co.kr/images/1000/java_0012.jpg"></article>
+				<article><img src="https://www.wmullyu.co.kr/images/1000/staedtler_0016.jpg"></article>
 			</section>
 		</section>
 		<section class="banner_02 main-layout-width">
