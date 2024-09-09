@@ -54,7 +54,7 @@ const changePassword = (getPw, getId, newPassword, newPasswordRe) => {
 		})
 		.then(data => {
 			if(data.message === 'SUCCESSFULLY'){
-				alert('비밀번호가 변경이 완료되었습니다. 로그앗됩니다. 다시 로그인 바랍니다.');
+				alert('비밀번호가 변경이 완료되었습니다. 로그아웃됩니다. 다시 로그인 바랍니다.');
 				location.href='/member/logout.jsp';
 			}else if(data.message === 'WRONG-PASSWORD'){
 				alert('이전 비밀번호가 틀립니다. 비밀번호를 확인 후 다시 시도해 주세요');

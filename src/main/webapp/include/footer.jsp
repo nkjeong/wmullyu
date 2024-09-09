@@ -102,6 +102,7 @@
 			        
 			        if (currentLeft === 0) {
 			            // 왼쪽으로 들어가기
+			            innerContent.style.display = 'none';
 			            leftSection.style.left = '-285px';
 			            // 아이콘 변경
 			            arrowIcon.classList.remove('fa-chevron-left');
