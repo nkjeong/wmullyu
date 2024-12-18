@@ -54,8 +54,104 @@ const searchFn = (ele)=>{
 }
 const itemFn = (ele)=>{
 	ele.innerHTML = `
-		<section>itemFn</section>
+		<section class="itemFnButton">
+			<section>상품등록</section>
+			<section>상품수정</section>
+			<section>상품삭제</section>
+		</section>
+		<section class="itemFnTitle">
+			<section class="item-check">
+				<div class="form-check" style="padding-left: 0;">
+				  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="float: none; margin-left: 0;">
+				</div>
+			</section>
+			<section class="item-barcode">
+				바코드
+			</section>
+			<section class="item-name">
+				상품명
+			</section>
+			<section class="item-retailPrice">
+				소비자가
+			</section>
+			<section class="item-purchasePrice">
+				공급가
+			</section>
+			<section class="item-option">
+				옵션
+			</section>
+			<section class="item-code">
+				상품코드
+			</section>
+			<section class="standard">
+				규격
+			</section>
+			<section class="item-unit">
+				단위
+			</section>
+			<section class="item-unit-each">
+				단위수량
+			</section>
+			<section class="item-brand">
+				제조사(브랜드)
+			</section>
+			<section class="item-registration-date">
+				등록일
+			</section>
+			<section class="item-modify-date">
+				수정일
+			</section>
+			<section class="scroll-area">
+			</section>
+		</section>
+		<section class="item-list-wrapper">
+			<section class="itemFnTitle">
+				<section class="item-check">
+					<div class="form-check" style="padding-left: 0;">
+					  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="float: none; margin-left: 0;">
+					</div>
+				</section>
+				<section class="item-barcode">
+					바코드
+				</section>
+				<section class="item-name">
+					상품명
+				</section>
+				<section class="item-retailPrice">
+					소비자가
+				</section>
+				<section class="item-purchasePrice">
+					공급가
+				</section>
+				<section class="item-option">
+					옵션
+				</section>
+				<section class="item-code">
+					상품코드
+				</section>
+				<section class="standard">
+					규격
+				</section>
+				<section class="item-unit">
+					단위
+				</section>
+				<section class="item-unit-each">
+					단위수량
+				</section>
+				<section class="item-brand">
+					제조사(브랜드)
+				</section>
+				<section class="item-registration-date">
+					등록일
+				</section>
+				<section class="item-modify-date">
+					수정일
+				</section>
+			</section>
+		</section>
 	`;
+	
+	setItemListWrapperSize(ele);
 }
 const memberFn = (ele)=>{
 	ele.innerHTML = `
@@ -68,4 +164,11 @@ const noticeFn = (ele)=>{
 	ele.innerHTML = `
 		<section>noticeFn</section>
 	`;
+}
+
+const setItemListWrapperSize = (ele) => {
+	let elementSize = ele.getBoundingClientRect();
+	let elementSizeHeight = elementSize.height - 150;
+	const getItemListWrapper = ele.querySelector('.item-list-wrapper');
+	getItemListWrapper.style.height = `${elementSizeHeight}px`;
 }

@@ -76,11 +76,9 @@
 }
 
 .innerContent .boardSection{
-	width:80%;
+	width:95%;
 	height:100%;
 	margin:0 auto;
-	border:1px solid #3f3f3f;
-	border-radius: 10px;
 }
 
 .innerRight:hover {
@@ -110,6 +108,67 @@
 	padding-left:25px;
 	border-bottom:1px dotted #5b5b5b;
 }
+
+.itemFnTitle, .itemFnButton{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	color:#dcdcdc;
+	height:50px;
+	border-top:1px solid #313131;
+	border-bottom:1px solid #313131;
+	background-color:#202020;
+}
+.itemFnButton{
+	background-color:unset;
+	border-top:0;
+	border-bottom:0;
+	justify-content:flex-start;
+}
+.itemFnTitle section{
+	text-align:center;
+	width:150px;
+	box-sizing:border-box;
+}
+.itemFnButton section{
+	border:1px solid #313131;
+	padding:5px 10px;
+	margin:0 10px;
+	background-color:#000000;
+	border-radius:10px;
+	cursor:pointer;
+}
+.itemFnTitle .item-check{
+	width:50px;
+}
+
+.item-list-wrapper{
+	margin-top:10px;
+	overflow-y:scroll;
+}
+
+.itemFnButton section:hover{
+	color:var(--bs-orange);
+}
+.itemFnTitle section:not(:last-child){
+	border-right:1px solid #313131;
+}
+
+.item-brand, .item-registration-date, .item-modify-date{
+	width:200px;
+}
+
+.item-option{
+	width:300px;
+}
+
+.itemFnTitle .scroll-area{
+	width:15px;
+}
+.itemFnTitle section.item-name{
+	flex:1;
+}
+
 @media screen and (max-width: 2100px) {
     .leftSection {
         left: -285px; /* 초기에 들어가 있는 상태 */

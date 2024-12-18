@@ -78,10 +78,7 @@
 							상품관리
 						</section>
 						<section class="leftSectionContent">
-							상품조회/수정/삭제
-						</section>
-						<section class="leftSectionContent">
-							상품등록
+							상품조회
 						</section>
 						<section class="leftSectionContent">
 							카테고리등록/수정/삭제
