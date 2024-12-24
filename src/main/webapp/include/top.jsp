@@ -77,13 +77,13 @@
 						<section class="leftSectionTitle">
 							상품관리
 						</section>
-						<section class="leftSectionContent">
+						<section class="leftSectionContent" data-query="itemSearch">
 							상품조회
 						</section>
-						<section class="leftSectionContent">
+						<section class="leftSectionContent" data-query="itemCategory">
 							카테고리등록/수정/삭제
 						</section>
-						<section class="leftSectionContent">
+						<section class="leftSectionContent" data-query="itemBrand">
 							제조사(브랜드)등록/수정/삭제
 						</section>
 					</section>
@@ -305,7 +305,7 @@
 									<article title="단종상품">Extinction : <span class="item-extinction" data-query="discontinued"></span>개</article>
 								</section>
 								<section class="h-time-article">
-									<article class="calendar">2024-02-09 수요일</article>
+									<article class="calendar"></article>
 								</section>
 							</section>
 					<%	

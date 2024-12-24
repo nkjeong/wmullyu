@@ -16,13 +16,14 @@ const createBoard = (board) => {
 		const boardClose = document.querySelector('.leftSection .boardCO');
 		leftSectionBtns.forEach((btns)=>{
 			btns.addEventListener('click', (btn)=>{
+				let query = btn.currentTarget.dataset.query;
 				boardTitle.textContent = btn.currentTarget.textContent;
 				innerContent.style.display = 'flex';
 				boardSection.innerHTML = '';
 				if(board === 'searchSection'){
 					searchFn(boardSection);
 				}else if(board === 'itemSection'){
-					itemFn(boardSection);
+					itemFn(boardSection, query);
 				}else if(board === 'memberSection'){
 					memberFn(boardSection);
 				}else if(board === 'noticeSection'){
@@ -52,64 +53,34 @@ if(noticeSection){
 const searchFn = (ele)=>{
 	console.log(ele);
 }
-const itemFn = (ele)=>{
-	ele.innerHTML = `
-		<section class="itemFnButton">
-			<section>상품등록</section>
-			<section>상품수정</section>
-			<section>상품삭제</section>
-		</section>
-		<section class="itemFnTitle">
-			<section class="item-check">
-				<div class="form-check" style="padding-left: 0;">
-				  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="float: none; margin-left: 0;">
-				</div>
+const itemFn = (ele, query)=>{
+	ele.innerHTML = ``;
+	if(query === 'itemSearch'){
+		ele.innerHTML = `
+			<section class="itemFnButton">
+				<section class="total-length">검색데이터 수 : <span></span>개</section>
+				<section>상품등록</section>
+				<section>상품복사</section>
+				<section>상품수정</section>
+				<section>상품삭제</section>
+				<section class="search-wrapper">
+					<form name="searchFormModal" class="search-form-modal">
+						<input type="text" name="searchInput" class="search-input" onfocus="document.querySelector('.search-wrapper').style.backgroundColor='#202020'" onblur="document.querySelector('.search-wrapper').style.backgroundColor='#000000'">
+					</form>
+				</section>
+				<section>상품명</section>
+				<section>등록일</section>
+				<section>높은가격순</section>
+				<section>낮은가격순</section>
 			</section>
-			<section class="item-barcode">
-				바코드
-			</section>
-			<section class="item-name">
-				상품명
-			</section>
-			<section class="item-retailPrice">
-				소비자가
-			</section>
-			<section class="item-purchasePrice">
-				공급가
-			</section>
-			<section class="item-option">
-				옵션
-			</section>
-			<section class="item-code">
-				상품코드
-			</section>
-			<section class="standard">
-				규격
-			</section>
-			<section class="item-unit">
-				단위
-			</section>
-			<section class="item-unit-each">
-				단위수량
-			</section>
-			<section class="item-brand">
-				제조사(브랜드)
-			</section>
-			<section class="item-registration-date">
-				등록일
-			</section>
-			<section class="item-modify-date">
-				수정일
-			</section>
-			<section class="scroll-area">
-			</section>
-		</section>
-		<section class="item-list-wrapper">
 			<section class="itemFnTitle">
 				<section class="item-check">
 					<div class="form-check" style="padding-left: 0;">
 					  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="float: none; margin-left: 0;">
 					</div>
+				</section>
+				<section class="item-img">
+					img
 				</section>
 				<section class="item-barcode">
 					바코드
@@ -147,11 +118,16 @@ const itemFn = (ele)=>{
 				<section class="item-modify-date">
 					수정일
 				</section>
+				<section class="scroll-area">
+				</section>
 			</section>
-		</section>
-	`;
+			<section class="item-list-wrapper">
 	
-	setItemListWrapperSize(ele);
+			</section>
+		`;
+		fetchDataModal(ele);
+		setItemListWrapperSize(ele);
+	}
 }
 const memberFn = (ele)=>{
 	ele.innerHTML = `
@@ -171,4 +147,75 @@ const setItemListWrapperSize = (ele) => {
 	let elementSizeHeight = elementSize.height - 150;
 	const getItemListWrapper = ele.querySelector('.item-list-wrapper');
 	getItemListWrapper.style.height = `${elementSizeHeight}px`;
+}
+
+async function fetchDataModal(ele){
+	let itemMode = 'all';
+	let modeCode = 'all';
+	let orderBy = 'item_name';
+	let inOrder = 'ASC';
+	const getListWrapper = ele.querySelector('.item-list-wrapper');
+	const totalLength = ele.querySelector('.total-length span');
+	let data;
+	let html = ``;
+	try {
+        data = await getFetch(`/item/itemExposureList?mode=${itemMode}&code=${modeCode}&orderBy=${orderBy}&inOrder=${inOrder}`);
+        if (data.length === 0) {
+		}else{
+			for(let i = 0 ; i < data.length ; i++){
+				html += `
+					<section class="item-line">
+						<section class="item-check">
+							<div class="form-check" style="padding-left: 0;">
+							  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="float: none; margin-left: 0;">
+							</div>
+						</section>
+						<section class="item-img">
+							img
+						</section>
+						<section class="item-barcode">
+							${data[i].barcode}
+						</section>
+						<section class="item-name">
+							${data[i].item_name_reg}
+						</section>
+						<section class="item-retailPrice">
+							소비자가
+						</section>
+						<section class="item-purchasePrice">
+							공급가
+						</section>
+						<section class="item-option">
+							옵션
+						</section>
+						<section class="item-code">
+							상품코드
+						</section>
+						<section class="standard">
+							규격
+						</section>
+						<section class="item-unit">
+							단위
+						</section>
+						<section class="item-unit-each">
+							단위수량
+						</section>
+						<section class="item-brand">
+							제조사(브랜드)
+						</section>
+						<section class="item-registration-date">
+							등록일
+						</section>
+						<section class="item-modify-date">
+							수정일
+						</section>
+					</section>
+				`;
+			}
+			getListWrapper.innerHTML = html;
+			totalLength.textContent = data.length;
+		}
+	} catch (error) {
+        console.error('Error setting items:', error);
+    }
 }
