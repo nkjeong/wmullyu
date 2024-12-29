@@ -29,9 +29,7 @@
 							<img src="/images/source/footer_logo.png">
 						</a>
 					</article>
-					<article>
-						2023 - 2024
-					</article>
+					<article></article>
 				</section>
 				<section class="company">
 					<article>COMPANY</article>

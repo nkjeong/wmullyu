@@ -107,7 +107,7 @@ const itemFn = (ele, query)=>{
 					단위
 				</section>
 				<section class="item-unit-each">
-					단위수량
+					원산지
 				</section>
 				<section class="item-brand">
 					제조사(브랜드)
@@ -180,34 +180,34 @@ async function fetchDataModal(ele){
 							${data[i].item_name_reg}
 						</section>
 						<section class="item-retailPrice">
-							소비자가
+							${getCurrentMony(data[i].item_retailPrice)}
 						</section>
 						<section class="item-purchasePrice">
-							공급가
+							${getCurrentMony(data[i].item_purchasePrice)}
 						</section>
 						<section class="item-option">
-							옵션
+							${optionSet(data[i].option)}
 						</section>
 						<section class="item-code">
-							상품코드
+							${data[i].code}
 						</section>
 						<section class="standard">
-							규격
+							${data[i].item_standard}
 						</section>
 						<section class="item-unit">
-							단위
+							${data[i].item_unit}
 						</section>
 						<section class="item-unit-each">
-							단위수량
+							${data[i].item_origin}
 						</section>
 						<section class="item-brand">
-							제조사(브랜드)
+							${data[i].nameKor}
 						</section>
 						<section class="item-registration-date">
-							등록일
+							${data[i].registrationDate}
 						</section>
 						<section class="item-modify-date">
-							수정일
+							${data[i].modifyDate}
 						</section>
 					</section>
 				`;
@@ -218,4 +218,14 @@ async function fetchDataModal(ele){
 	} catch (error) {
         console.error('Error setting items:', error);
     }
+}
+
+const optionSet = (val) =>{
+	let html = ``;
+	if(val === 'N'){
+		html = '없음';
+	}else{
+		html = '<span style="color:var(--bs-orange);">있음</span>';
+	}
+	return html;
 }

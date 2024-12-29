@@ -192,6 +192,15 @@ form.search-form-modal input.search-input{
 	height:40px;
 	font-weight:200;
 }
+.itemFnTitle .standard,
+.item-line .standard{
+	width:250px;
+}
+.item-line .standard,
+.item-registration-date,
+.item-modify-date{
+	font-size:0.75rem;
+}
 .item-line:not(:last-child){
 	border-bottom:0;
 }
