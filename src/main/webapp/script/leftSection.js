@@ -245,6 +245,9 @@ const createConsole = (dataButton, ele, itemData) =>{
     const dataConsole = document.createElement('section');
     dataConsole.setAttribute('class', 'data-board-wrapper');
     dataConsole.innerHTML = `
+    	<section style="position:absolute; top:8px; right:13px; color:red; font-size:1.5rem;">
+    		<i class="fa-solid fa-xmark board"></i>
+    	</section>
     	<section class="data-board">
     		
     	</section>
