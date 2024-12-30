@@ -59,19 +59,19 @@ const itemFn = (ele, query)=>{
 		ele.innerHTML = `
 			<section class="itemFnButton">
 				<section class="total-length">검색데이터 수 : <span></span>개</section>
-				<section>상품등록</section>
-				<section>상품복사</section>
-				<section>상품수정</section>
-				<section>상품삭제</section>
+				<section class="buttons" data-button="registration">상품등록</section>
+				<section class="buttons" data-button="copy">상품복사</section>
+				<section class="buttons" data-button="correction">상품수정</section>
+				<section class="buttons" data-button="delete">상품삭제</section>
 				<section class="search-wrapper">
 					<form name="searchFormModal" class="search-form-modal">
 						<input type="text" name="searchInput" class="search-input" onfocus="document.querySelector('.search-wrapper').style.backgroundColor='#202020'" onblur="document.querySelector('.search-wrapper').style.backgroundColor='#000000'">
 					</form>
 				</section>
-				<section>상품명</section>
-				<section>등록일</section>
-				<section>높은가격순</section>
-				<section>낮은가격순</section>
+				<section class="buttons" data-button="name" data-order="Y">상품명</section>
+				<section class="buttons" data-button="reg-date" data-order="Y">등록일</section>
+				<section class="buttons" data-button="high-price" data-order="Y">높은가격순</section>
+				<section class="buttons" data-button="low-price" data-order="Y">낮은가격순</section>
 			</section>
 			<section class="itemFnTitle">
 				<section class="item-check">
@@ -121,10 +121,20 @@ const itemFn = (ele, query)=>{
 				<section class="scroll-area">
 				</section>
 			</section>
-			<section class="item-list-wrapper">
-	
-			</section>
+			<section class="item-list-wrapper"></section>
 		`;
+		const buttons = ele.querySelectorAll('.buttons');
+		buttons.forEach((btns)=>{
+			btns.addEventListener('click', (btn)=>{
+				let dataButton = btn.currentTarget.dataset.button;
+				let dataOrder = btn.currentTarget.dataset.order;
+				if(dataOrder === 'Y'){
+					
+				}else{
+					createConsole(dataButton, ele);
+				}
+			});
+		});
 		fetchDataModal(ele);
 		setItemListWrapperSize(ele);
 	}
@@ -164,7 +174,7 @@ async function fetchDataModal(ele){
 		}else{
 			for(let i = 0 ; i < data.length ; i++){
 				html += `
-					<section class="item-line">
+					<section class="item-line" data-itemdata='${JSON.stringify(data[i])}'>
 						<section class="item-check">
 							<div class="form-check" style="padding-left: 0;">
 							  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="float: none; margin-left: 0;">
@@ -228,4 +238,20 @@ const optionSet = (val) =>{
 		html = '<span style="color:var(--bs-orange);">있음</span>';
 	}
 	return html;
+}
+
+const createConsole = (dataButton, ele, itemData) =>{
+// 요소 생성
+    const dataConsole = document.createElement('section');
+    dataConsole.setAttribute('class', 'data-board-wrapper');
+    dataConsole.innerHTML = `
+    	<section class="data-board">
+    		
+    	</section>
+    `;
+    // 클래스 추가로 효과 적용
+    document.body.appendChild(dataConsole);
+    setTimeout(() => {
+        dataConsole.classList.add('data-board-wrapper-effect');
+    }, 50); // 약간의 지연을 주어 transition 효과가 적용되도록 함
 }
